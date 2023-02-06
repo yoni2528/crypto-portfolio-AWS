@@ -36,8 +36,6 @@ jobs:
       - name: Login to Amazon ECR Public
         id: login-ecr-public
         uses: aws-actions/amazon-ecr-login@v1
-        with:
-          registry-type: public
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -48,7 +46,6 @@ jobs:
         id: build-image
         env:
           REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
-          REGISTRY_ALIAS: z0r3k8e0
           REPOSITORY: ${{ env.ECR_REPOSITORY }}
           IMAGE_TAG: latest
         run: |

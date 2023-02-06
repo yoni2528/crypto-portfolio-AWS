@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './deleteTokenButton.module.css'
+import styles from './DeleteTokenButton.module.css'
 import { IoTrashOutline } from 'react-icons/io5'
 import { useDispatch } from 'react-redux'
 import { tokenDeleteModalActions } from '../../store/reducers/modalReducers'
