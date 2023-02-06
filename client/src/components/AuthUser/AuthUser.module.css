@@ -1,0 +1,84 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeInRight 0.5s;
+  width: 70%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.invalid {
+  animation: shake 0.5s;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.sub-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.login-redirect {
+  font-size: 1rem;
+  color: #333;
+}
+.login-redirect a {
+  color: rgb(57, 135, 245);
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.user-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #ffeae3;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.user-demo-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 1.4rem;
+  }
+  .sub-title {
+    font-size: 0.75rem;
+  }
+  .login-redirect {
+    font-size: 0.75rem;
+  }
+}

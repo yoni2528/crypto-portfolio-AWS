@@ -1,0 +1,83 @@
+name: Deploy Server-side code to aws ecs
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: cryptofolio-repo
+  ECS_SERVICE: cryptofolio-service
+  ECS_CLUSTER: cryptofolio-cluster
+  CONTAINER_NAME: cryptofolio-container
+  TASK-DEFINITION: cryptofolio-service
+
+jobs:
+  build:
+    name: Build Image
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./server
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR Public
+        id: login-ecr-public
+        uses: aws-actions/amazon-ecr-login@v1
+        with:
+          registry-type: public
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: build-image
+        id: build-image
+        env:
+          REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
+          REGISTRY_ALIAS: z0r3k8e0
+          REPOSITORY: ${{ env.ECR_REPOSITORY }}
+          IMAGE_TAG: latest
+        run: |
+          docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
+          docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
+          echo "image=$REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Download task definition
+        run: |
+          aws ecs describe-task-definition \
+          --task-definition ${{env.TASK-DEFINITION}} \
+          --query taskDefinition > task-definition2.json
+
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: ./server/task-definition2.json
+          container-name: ${{env.CONTAINER_NAME}}
+          image: ${{ steps.build-image.outputs.image }}
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: ${{env.ECS_SERVICE}}
+          cluster: ${{env.ECS_CLUSTER}}
+          wait-for-service-stability: false
+          force-new-deployment: true
+
+      - name: invalidate cloudfront
+        run: aws cloudfront create-invalidation --distribution-id=E3ETD4LPXDNJVD --paths "/*"

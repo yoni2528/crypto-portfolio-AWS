@@ -1,0 +1,27 @@
+.notification-box {
+  position: absolute;
+  background-color: white;
+  right: 0;
+  top: 20%;
+  padding: 1rem;
+  background-color: #51cf66;
+  color: white;
+  border-radius: 8px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+@media (max-width: 1200px) {
+  .notification-box {
+    transform: translateX(-200%);
+    top: 10%;
+    right: 4%;
+    padding: 1rem 4rem 1rem 1rem;
+  }
+}
+
+.active {
+  transform: translateX(10%);
+  opacity: 1;
+}

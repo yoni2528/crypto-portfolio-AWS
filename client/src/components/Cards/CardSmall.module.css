@@ -1,0 +1,76 @@
+.card-small {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.2rem 1.4rem;
+  color: #111;
+}
+
+.card-small-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f26e43;
+  margin-bottom: 0.6rem;
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card-balance {
+  font-size: 2rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  animation: fadeIn 3s;
+}
+
+.card-currency {
+  font-size: 1rem;
+}
+
+.profit {
+  background-color: #2e4cd6;
+  color: white;
+  border-radius: 12px;
+}
+
+.profit .card-small-title {
+  color: white;
+}
+
+.loss {
+  background-color: #e53354;
+  color: white;
+  border-radius: 12px;
+}
+
+.loss .card-small-title {
+  color: white;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1050px) {
+  .card-small {
+    font-size: 1rem;
+  }
+  .card-small-title {
+    font-size: 0.75rem;
+  }
+  .card-balance {
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    animation: fadeIn 3s;
+  }
+}

@@ -1,0 +1,105 @@
+.portfolio-layout {
+  margin: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  animation: fadeInLeft 1s;
+}
+
+table {
+  width: 100%;
+  text-align: start;
+}
+
+th {
+  text-align: start;
+  font-size: 1rem;
+}
+td {
+  font-size: 0.875rem;
+  border-bottom: 1px solid #eee;
+  padding: 2rem 0;
+}
+
+.new {
+  animation: fadeInUp 0.5s;
+}
+
+.token-image {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+.token-title::first-letter {
+  text-transform: uppercase;
+}
+.token-total-quantity {
+  display: flex;
+  flex-direction: column;
+}
+
+.token-total {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.token-quantity {
+  font-size: 0.75rem;
+  color: #444;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-2%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1050px) {
+  .portfolio-layout {
+    max-width: 100%;
+    overflow-x: scroll;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .portfolio-layout {
+    overflow-x: scroll;
+    display: flex;
+    margin: 2rem auto;
+    height: 100vh;
+
+    width: 350px;
+  }
+  table {
+    overflow-x: scroll;
+  }
+  td,
+  th {
+    padding: 1rem;
+  }
+}

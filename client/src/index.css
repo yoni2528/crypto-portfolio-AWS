@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+
+/* 
+Design Pattern : 
+
+*Colors
+- Navbar : #0C1B2F
+- Main : #F26E43
+- Secondary : #2E4CD6
+- Background Grey : #F1F2F6
+
+*Font size
+1rem = 10px 
+- Main - 1.4rem
+- Buttons - 1.4rem
+- Page Title = 2.4rem
+- Sub Title = 2rem
+
+*Padding 
+- 1rem, 1.4rem, 1.8rem, 2.2rem, 2.6rem
+
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: 'Rubik';
+  position: relative;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding: 0;
+  margin: 0;
+}

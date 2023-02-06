@@ -1,0 +1,33 @@
+.select-token-overlay {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.token-select-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  max-height: 350px;
+  overflow-y: scroll;
+}
+
+.token-list-item {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.token-list-item:hover {
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: #435eda;
+}

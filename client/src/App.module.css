@@ -1,0 +1,41 @@
+.main-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  background-color: #eee;
+  display: relative;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1050px) {
+  .navbar {
+    visibility: hidden;
+    width: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+  }
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .active {
+    position: fixed;
+    visibility: inherit;
+    width: 30%;
+    opacity: 1;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 650px) {
+  .active {
+    position: fixed;
+    visibility: inherit;
+    width: 60%;
+    opacity: 1;
+    z-index: 10;
+  }
+}

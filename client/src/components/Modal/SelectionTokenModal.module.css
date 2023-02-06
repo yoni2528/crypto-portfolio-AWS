@@ -1,0 +1,29 @@
+.overlay {
+  background-color: rgba(31, 31, 31, 0.471);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.modal-box {
+  background-color: white;
+  visibility: hidden;
+  border-radius: 12px;
+  transform: scale(0);
+  transition: all 0.4s;
+}
+
+.open {
+  visibility: inherit;
+}
+
+.open .modal-box {
+  visibility: inherit;
+  transform: scale(1);
+}

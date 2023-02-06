@@ -1,0 +1,84 @@
+.form-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  transition: 0.5s;
+}
+
+.form-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  margin-left: 0.2rem;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.block-user-details {
+  width: 50%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+}
+
+.block-reset-password {
+  width: 50%;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 12px;
+}
+
+.block-reset-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.icon {
+  font-size: 2.4rem;
+  color: #f26e43;
+}
+
+.icon-details {
+  font-size: 2.4rem;
+  color: #2e4cd6;
+}
+
+.active {
+  margin-top: 1rem;
+  height: 11rem;
+  opacity: 1;
+  padding: 1rem;
+}
+
+.header-title-icon {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .block-user-details {
+    width: 100%;
+  }
+
+  .form-title {
+    font-size: 0.7rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+}

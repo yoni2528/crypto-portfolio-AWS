@@ -1,0 +1,52 @@
+.add-token-overlay {
+  min-height: 500px;
+  min-width: 600px;
+  padding: 2rem;
+  animation: fadeInLeft 0.4s;
+}
+
+.add-token-title {
+  font-size: 1.4rem;
+}
+
+.icon {
+  font-size: 1.875rem;
+  cursor: pointer;
+}
+
+.add-token-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 630px) {
+  .add-token-overlay {
+    min-height: 500px;
+    min-width: 350px;
+    max-width: 350px;
+    padding: 2rem;
+    animation: fadeInLeft 0.4s;
+  }
+}
+
+@media (max-width: 630px) {
+  .add-token-overlay {
+    min-height: 500px;
+    min-width: 350px;
+    max-width: 350px;
+    padding: 2rem;
+    animation: fadeInLeft 0.4s;
+  }
+}

@@ -1,0 +1,76 @@
+.card-medium {
+  padding: 2rem;
+}
+
+.card-medium-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.token-list {
+  height: 200px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: scroll;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.token-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.token-details h4 {
+  font-size: 0.875rem;
+}
+
+.token-details p {
+  font-size: 0.75rem;
+}
+
+.token-price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.token-price p:nth-child(1) {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.token-price p:nth-child(2) {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

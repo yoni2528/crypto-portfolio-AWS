@@ -1,0 +1,27 @@
+.input {
+  border: none;
+  background-color: #eee;
+  border-radius: 12px;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  font-family: 'Rubik';
+  font-size: 1rem;
+}
+
+.input:focus-visible {
+  outline-color: #435eda;
+  box-shadow: 0px 0px 0px 5px rgba(67, 94, 218, 0.05);
+}
+
+.invalid {
+  border: 1px solid #e13939;
+}
+
+.input-select {
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.invalid-message {
+  font-size: 0.875rem;
+  color: #e13939;
+}

@@ -1,0 +1,55 @@
+.auth-layout {
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-inside-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 12px;
+}
+.auth-left {
+  width: 50%;
+  height: 600px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.auth-right {
+  width: 50%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+@media (max-width: 1300px) {
+  .auth-layout {
+    width: 80%;
+  }
+
+  .auth-right {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-layout {
+    width: 100%;
+    overflow-x: none;
+  }
+  .auth-left {
+    display: none;
+  }
+  .auth-right {
+    width: 90%;
+  }
+}

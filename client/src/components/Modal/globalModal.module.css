@@ -1,0 +1,22 @@
+.modal-box {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+}
+.modal-message {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
