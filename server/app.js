@@ -21,7 +21,6 @@ app.use(
   cors({
     allowedOrigins: [
       "https://euphonious-platypus-3e9ec5.netlify.app/",
-      "https://d3h8860yi34pv.cloudfront.net",
       "https://d3h8860yi34pv.cloudfront.net/",
       "http://127.0.0.1:5173",
     ],
