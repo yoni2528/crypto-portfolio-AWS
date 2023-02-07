@@ -41,4 +41,4 @@ jobs:
         run: aws s3 sync ./dist s3://cryptofolio-client
 
       - name: invalidate cloudfront
-        run: aws cloudfront create-invalidation --distribution-id=E2XV0I4RQZNRPB --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id=E3EVHQSXOSPLVX --paths "/*"
