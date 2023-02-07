@@ -34,7 +34,7 @@ app.use(xss());
 app.use(express.static(`${__dirname}/public`));
 
 app.use("/test", (req, res) => {
-  res.send("welcome to my server this is test number 9");
+  res.send("welcome to my server this is test number 10");
 });
 app.use("/app/v1/users", userRouter);
 app.use("/app/v1/tokens", tokenRouter);
