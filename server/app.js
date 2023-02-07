@@ -17,7 +17,15 @@ app.use(express.json({ limit: "19kb" }));
 
 app.use(morgan("combined"));
 
-app.use(cors());
+app.use(
+  cors({
+    allowedOrigins: [
+      "https://euphonious-platypus-3e9ec5.netlify.app/",
+      "https://d3h8860yi34pv.cloudfront.net/",
+      "http://127.0.0.1:5173",
+    ],
+  })
+);
 
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(mongoSanitize());
@@ -26,7 +34,7 @@ app.use(xss());
 app.use(express.static(`${__dirname}/public`));
 
 app.use("/test", (req, res) => {
-  res.send("welcome to my server this is test number 4)");
+  res.send("welcome to my server this is test number 3)");
 });
 app.use("/app/v1/users", userRouter);
 app.use("/app/v1/tokens", tokenRouter);
